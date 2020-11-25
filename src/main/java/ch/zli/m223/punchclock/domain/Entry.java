@@ -26,7 +26,8 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
-    private int userid;
+    @ManyToOne
+    private User user;
 
     @ManyToOne
     private  EntryTag entryTag;

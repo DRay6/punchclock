@@ -10,6 +10,8 @@ const createUser = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const entry = {}
+    entry['username'] = formData.get('username');
+    entry['password']
 
     fetch(`${URL}/entries`, {
         method: 'POST',

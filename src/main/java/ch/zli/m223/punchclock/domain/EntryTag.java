@@ -11,7 +11,7 @@ public class EntryTag {
     private  int id;
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "entryTag")
     private Set<Entry> entrySet;
 
     public long getId() {
