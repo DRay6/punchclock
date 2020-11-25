@@ -9,12 +9,16 @@ import javax.persistence.Id;
 public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     private String username;
     private String password;
 
-    public long getId() {
+    public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -32,4 +36,6 @@ public class ApplicationUser {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }

@@ -1,12 +1,17 @@
 # M223: Punchclock
-Dies ist eine Beispielapplikation für das Modul M223.
+Dies ist das Prüfungsprojekt von Modul 223. Es ist eine erweiterung des Beispielprogrammes des Modul 223.
 
-## Loslegen
-Folgende Schritte befolgen um loszulegen:
-1. Sicherstellen, dass JDK 12 installiert und in der Umgebungsvariable `path` definiert ist.
-1. Ins Verzeichnis der Applikation wechseln und über die Kommandozeile mit `./gradlew bootRun` oder `./gradlew.bat bootRun` starten
-1. Unittest mit `./gradlew test` oder `./gradlew.bat test` ausführen.
-1. Ein ausführbares JAR kann mit `./gradlew bootJar` oder `./gradlew.bat bootJar` erstellt werden.
+## Was macht die Applikation?
+Die Applikaiton ist eine Multiuser Applikation. 
+Man kann Anwender als Benutzer oder als Admin hinzufügen.
+Benutzer können sich ein und auschecken. Diese Einträge werden hier als Entrys bezeichnet.
+Admins verwalten die Benutzer.
+
+##Wie startet man die Applikation
+Man startet Springboot und geht dann auf den definierten port im Chrome. 
+In diesem Fall ist der Port 8081. Ports erreicht man über localhost.
+Die URL würde in diesem Falle "http://localhost:8081" heissen
+
 
 Folgende Dienste stehen während der Ausführung im Profil `dev` zur Verfügung:
 - REST-Schnittstelle der Applikation: http://localhost:8081
