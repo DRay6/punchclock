@@ -25,6 +25,9 @@ public class EntryController {
         return entryService.findAll();
     }
 
+    @GetMapping("/by-user{id}")
+    public List<Entry> getEntryByUserid(@PathVariable int id){return entryService.findByUserId(id);}
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Entry createEntry(@Valid @RequestBody Entry entry) {

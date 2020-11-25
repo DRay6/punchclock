@@ -4,7 +4,9 @@ import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.repository.EntryRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 @Service
 public class EntryService {
@@ -20,6 +22,18 @@ public class EntryService {
 
     public List<Entry> findAll() {
         return entryRepository.findAll();
+    }
+
+    public List<Entry> findByUserId(int id){
+        List<Entry> entryList = new Stack<>();
+
+        for (Entry entry :entryRepository.findAll()) {
+            if (entry.getId() == id){
+                entryList.add(entry);
+            }
+        }
+
+        return entryList;
     }
 
     public void deleteEntry(int id){
