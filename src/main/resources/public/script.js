@@ -11,7 +11,11 @@ const createUser = (e) => {
     const formData = new FormData(e.target);
     const entry = {}
     entry['username'] = formData.get('username');
-    entry['password']
+    entry['password'] = formData.get('password');
+    entry['role'] = {
+
+    };
+    role = formData.get('role');
 
     fetch(`${URL}/entries`, {
         method: 'POST',
