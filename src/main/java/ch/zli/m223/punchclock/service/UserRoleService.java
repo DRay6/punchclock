@@ -1,4 +1,2 @@
-package ch.zli.m223.punchclock.service;
-
-public class UserRoleService {
+package ch.zli.m223.punchclock.service;public class UserRoleService {
 }

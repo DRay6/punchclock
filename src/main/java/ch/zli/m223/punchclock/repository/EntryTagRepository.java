@@ -1,4 +1,7 @@
 package ch.zli.m223.punchclock.repository;
 
-public interface EntryTagRepository {
+import ch.zli.m223.punchclock.domain.EntryTag;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EntryTagRepository extends JpaRepository<EntryTag,Integer> {
 }
