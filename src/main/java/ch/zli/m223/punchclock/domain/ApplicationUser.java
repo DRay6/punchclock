@@ -1,24 +1,21 @@
 package ch.zli.m223.punchclock.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String username;
     private String password;
 
-    public int getId() {
-        return id;
-    }
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private UserRole userRole;
 
-    public void setId(int id) {
-        this.id = id;
+    public long getId() {
+        return id;
     }
 
     public String getUsername() {
@@ -36,6 +33,4 @@ public class ApplicationUser {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }

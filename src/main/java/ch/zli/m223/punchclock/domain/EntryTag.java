@@ -1,14 +1,24 @@
 package ch.zli.m223.punchclock.domain;
 
+import jdk.jfr.Name;
+
+import javax.persistence.*;
+import java.util.Set;
+
+@Entity
 public class EntryTag {
-    private  long id;
+    @Id
+    private  int id;
     private String name;
+
+    @OneToMany
+    private Set<Entry> entrySet;
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -25,8 +26,10 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
-    private long userid;
+    private int userid;
 
+    @ManyToOne
+    private  EntryTag entryTag;
 
     public int getId() {
         return id;
