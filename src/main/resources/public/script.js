@@ -6,6 +6,25 @@ const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
 };
 
+const createUser = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const entry = {}
+
+    fetch(`${URL}/entries`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(entry)
+    }).then((result) => {
+        result.json().then((entry) => {
+            entries.push(entry);
+            renderEntries();
+        });
+    });
+};
+
 const createEntry = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -67,5 +86,8 @@ const renderEntries = () => {
 document.addEventListener('DOMContentLoaded', function(){
     const createEntryForm = document.querySelector('#createEntryForm');
     createEntryForm.addEventListener('submit', createEntry);
+
+    const createUserForm = document.querySelector('#createUserForm');
+    createUserForm.addEventListener('submit', createUser);
     indexEntries();
 });

@@ -12,7 +12,7 @@ public class UserRole {
     private String name;
 
     @OneToMany
-    private Set<ApplicationUser> applicationUsers;
+    private Set<User> users;
 
     public int getId() {
         return id;

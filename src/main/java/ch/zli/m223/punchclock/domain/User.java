@@ -3,7 +3,7 @@ package ch.zli.m223.punchclock.domain;
 import javax.persistence.*;
 
 @Entity
-public class ApplicationUser {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
