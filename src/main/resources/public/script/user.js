@@ -3,25 +3,26 @@ const URL = 'http://localhost:8081';
 const user = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const entry = {};
-    role = formData.get('role');
+    const user = {};
+    var role = formData.get('role');
 
-    entry['username'] = formData.get('username');
-    entry['password'] = formData.get('password');
-    entry['role'] = {
-        "name" : role
-    };
+    user['username'] = formData.get('username');
+    user['password'] = formData.get('password');
+    user['userRole'] = fetch('${URL}/entries',{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
 
     fetch(`${URL}/users/sign-up`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(entry)
+        body: JSON.stringify(user)
     }).then((result) => {
-        result.json().then((entry) => {
-            entries.push(entry);
-        });
+        result.json();
     });
 };
 
@@ -53,6 +54,5 @@ const indexUsers = () => {
 document.addEventListener('DOMContentLoaded', function(){
     const createUserForm = document.querySelector('#createUserForm');
     createUserForm.addEventListener('submit', user);
-    indexEntries();
 });
 
