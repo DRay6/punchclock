@@ -14,7 +14,8 @@ const createEntry = (e) => {
     fetch(`${URL}/entries`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('token')
         },
         body: JSON.stringify(entry)
     }).then((result) => {
@@ -27,8 +28,23 @@ const createEntry = (e) => {
 
 const deleteEntry = (id) => {
     fetch(`${URL}/entries/${id}`, {
-        method: 'DELETE'});
-    window.location = window.location;
+        method: 'DELETE',
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    }).then(indexEntries);
+
+
+}
+
+const editEntry = (id) => {
+    fetch(`${URL}/entries/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    });
+    indexEntries();
 }
 
 const indexEntries = () => {
@@ -51,7 +67,8 @@ const renderEntries = () => {
         row.appendChild(createCell(entry.id));
         row.appendChild(createCell(new Date(entry.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(entry.checkOut).toLocaleString()));
-        row.appendChild(createCell('<button type="submit" onclick="deleteEntry('+entry.id+')">Delete</button>'));
+        row.appendChild(createCell('<button type="button" onclick="editEntry('+entry.id+')">Modifizieren</button>'));
+        row.appendChild(createCell('<button type="submit" onclick="deleteEntry('+entry.id+')">Löschen</button>'));
         display.appendChild(row);
     });
 };

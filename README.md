@@ -7,9 +7,8 @@ Man kann Anwender als Benutzer oder als Admin hinzufügen.
 Benutzer können sich ein und auschecken. Diese Einträge werden hier als Entrys bezeichnet.
 Admins verwalten die Benutzer.
 
-##Wie startet man die Applikation
-Man startet Springboot und geht dann auf den definierten port im Chrome. 
-In diesem Fall ist der Port 8081. Ports erreicht man über localhost.
+## Wie startet man die Applikation
+Konfiguriere den Port auf 8081. Starte Spring. Ports erreicht man über localhost.
 Die URL würde in diesem Falle "http://localhost:8081" heissen
 
 

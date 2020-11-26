@@ -22,8 +22,6 @@ const createUser = (e) => {
     })
 };
 
-
-
 document.addEventListener('DOMContentLoaded', function(){
     const createUserForm = document.querySelector('#createUserForm');
     createUserForm.addEventListener('submit', createUser);

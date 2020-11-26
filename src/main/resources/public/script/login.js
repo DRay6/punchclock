@@ -15,6 +15,7 @@ const login = (e) => {
     }).then(resp => {
         console.log(resp)
         if (resp.status === 200){
+            localStorage.setItem('token', resp.headers.get('Authorization'));
             window.location.assign("./entry.html");
         }
     })
