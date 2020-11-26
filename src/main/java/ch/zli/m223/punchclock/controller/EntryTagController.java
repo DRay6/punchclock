@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/entryTags")
+//Verwaltet Request für Eintragtags
 public class EntryTagController {
     private EntryService entryService;
 

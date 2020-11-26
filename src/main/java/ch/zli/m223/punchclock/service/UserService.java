@@ -13,6 +13,7 @@ import static java.util.Collections.emptyList;
 
 
 @Service
+//Hier ist die Logik für den Benutzer
 public class UserService implements UserDetailsService {
     private UserRepository userRepository;
 

@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/userRoles")
+//Verwaltet Requests für die Benutzerrolle
 public class UserRoleController {
 
     private UserRoleService userRoleService;

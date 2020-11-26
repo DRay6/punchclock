@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Stack;
 
 @Service
+//Hier ist die Logik für die Einträge
 public class EntryService {
     private EntryRepository entryRepository;
 

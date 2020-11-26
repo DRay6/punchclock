@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.logging.Filter;
-
+//Greift auf die Benutzer in der Datenbank zu
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
 

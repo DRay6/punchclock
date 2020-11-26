@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+//Verwaltet Requests für den User
 public class UserController {
 
     private UserService userService;

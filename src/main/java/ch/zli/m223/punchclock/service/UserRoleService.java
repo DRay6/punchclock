@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+//Hier ist die Logik für die Benutzereinträge
 public class UserRoleService {
     UserRoleRepository userRoleRepository;
     public UserRoleService(UserRoleRepository userRoleRepository) {
