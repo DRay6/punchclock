@@ -1,4 +1,3 @@
-const URL = 'http://localhost:8081';
 let entries = [];
 
 const dateAndTimeToDate = (dateString, timeString) => {

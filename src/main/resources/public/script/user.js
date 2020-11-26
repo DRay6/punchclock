@@ -1,5 +1,3 @@
-const URL = 'http://localhost:8081';
-
 const user = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -26,17 +24,17 @@ const user = (e) => {
     });
 };
 
-const indexUsers = () => {
-    fetch(`${URL}/entries`, {
-        method: 'GET'
-    }).then((result) => {
-        result.json().then((result) => {
-            entries = result;
-            renderEntries();
-        });
-    });
-    renderEntries();
-};
+// const indexUsers = () => {
+//     fetch(`${URL}/entries`, {
+//         method: 'GET'
+//     }).then((result) => {
+//         result.json().then((result) => {
+//             entries = result;
+//             renderEntries();
+//         });
+//     });
+//     renderEntries();
+// };
 
 // const renderEntries = () => {
 //     const display = document.querySelector('#entryDisplay');

@@ -13,6 +13,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.context.annotation.Bean;
 
+import static ch.zli.m223.punchclock.filter.SecurityConstants.GET_ROLES_URL;
 import static ch.zli.m223.punchclock.filter.SecurityConstants.SIGN_UP_URL;
 
 @EnableWebSecurity
@@ -32,6 +33,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
                 .antMatchers(HttpMethod.GET, "/**").permitAll()
+                .antMatchers(HttpMethod.GET, GET_ROLES_URL).permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
