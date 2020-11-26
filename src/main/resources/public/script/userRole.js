@@ -3,14 +3,14 @@ const indexUserRoles = () => {
     fetch(`${URL}/userRoles`)
         .then(resp => resp.json()
             .then((result) => {
+                console.log({result})
                 userRoles = result
+                console.log({userRoles})
                 renderRoles();
             }))
         .then(data => console.log(data))
 };
-// .then((result) => {
-//     result.json().
-// });
+
 const renderRoles = () => {
     const select = document.querySelector('#role');
     userRoles.forEach((role) => {

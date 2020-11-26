@@ -15,8 +15,9 @@ public class UserController {
     private UserService userService;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public UserController(BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserController(BCryptPasswordEncoder bCryptPasswordEncoder, UserService userService) {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.userService = userService;
     }
 
     @PostMapping("/sign-up")

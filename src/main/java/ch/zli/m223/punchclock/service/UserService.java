@@ -1,6 +1,5 @@
 package ch.zli.m223.punchclock.service;
 
-import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,8 +33,8 @@ public class UserService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), emptyList());
     }
 
-    public User createUser(User user) {
-        return userRepository.saveAndFlush(user);
+    public void createUser(User user) {
+        userRepository.saveAndFlush(user);
     }
 
 }

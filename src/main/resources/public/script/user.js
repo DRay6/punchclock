@@ -1,15 +1,14 @@
-const user = (e) => {
+const createUser = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const user = {};
 
-    user['username'] = formData.get('username');
-    user['password'] = formData.get('password');
-    for(let role in userRoles){
-        if (formData.get('role') === role.id){
-            user['userRole'] = role;
-        }
+    user.username = formData.get('username');
+    user.password= formData.get('password');
+    user.userRole = {
+        id: +formData.get('role')
     }
+    console.log(user);
 
     fetch(`${URL}/users/sign-up`, {
         method: 'POST',
@@ -17,9 +16,13 @@ const user = (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
-    }).then((result) => {
-        result.json();
-    });
+    }).then(resp => {
+        console.log(resp)
+
+        if (resp.status === 200){
+            window.location = "";
+        }
+    })
 };
 
 // const indexUsers = () => {
@@ -49,6 +52,6 @@ const user = (e) => {
 
 document.addEventListener('DOMContentLoaded', function(){
     const createUserForm = document.querySelector('#createUserForm');
-    createUserForm.addEventListener('submit', user);
+    createUserForm.addEventListener('submit', createUser);
 });
 
