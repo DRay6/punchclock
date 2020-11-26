@@ -48,17 +48,6 @@ public class User {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", userRole=" + userRole.getName() +
-                ", entrySet=" + entrySet +
-                '}';
-    }
-
     public UserRole getUserRole() {
         return userRole;
     }
