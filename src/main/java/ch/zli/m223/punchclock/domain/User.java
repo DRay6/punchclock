@@ -1,5 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -16,6 +18,7 @@ public class User {
 
     @ManyToOne
     @JoinColumn(nullable = false)
+    @JsonIgnoreProperties({"users"})
     private UserRole userRole;
 
     @OneToMany(mappedBy = "user")
@@ -43,6 +46,17 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", userRole=" + userRole.getName() +
+                ", entrySet=" + entrySet +
+                '}';
     }
 
     public UserRole getUserRole() {

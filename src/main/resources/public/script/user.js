@@ -2,16 +2,14 @@ const user = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const user = {};
-    var role = formData.get('role');
 
     user['username'] = formData.get('username');
     user['password'] = formData.get('password');
-    user['userRole'] = fetch('${URL}/entries',{
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
+    for(let role in userRoles){
+        if (formData.get('role') === role.id){
+            user['userRole'] = role;
         }
-    })
+    }
 
     fetch(`${URL}/users/sign-up`, {
         method: 'POST',

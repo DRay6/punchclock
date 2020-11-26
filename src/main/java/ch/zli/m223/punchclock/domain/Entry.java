@@ -1,5 +1,6 @@
 package ch.zli.m223.punchclock.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
@@ -27,9 +28,11 @@ public class Entry {
     private LocalDateTime checkOut;
 
     @ManyToOne
+    @JsonIgnoreProperties({"entrySet"})
     private User user;
 
     @ManyToOne
+    @JsonIgnoreProperties({"entrySet"})
     private  EntryTag entryTag;
 
     public int getId() {

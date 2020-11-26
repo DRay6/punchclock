@@ -1,5 +1,6 @@
 package ch.zli.m223.punchclock.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jdk.jfr.Name;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ public class EntryTag {
     private String name;
 
     @OneToMany(mappedBy = "entryTag")
+    @JsonIgnoreProperties({"entry"})
     private Set<Entry> entrySet;
 
     public long getId() {

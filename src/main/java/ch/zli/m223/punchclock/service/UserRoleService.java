@@ -17,4 +17,5 @@ public class UserRoleService {
     public List<UserRole> findAll(){
         return userRoleRepository.findAll();
     }
+
 }

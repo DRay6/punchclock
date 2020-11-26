@@ -1,29 +1,28 @@
 let userRoles = [];
 const indexUserRoles = () => {
-    fetch(`${URL}/userRoles`, {
-        method: 'GET'
-    }).then((result) => {
-        result.json().then((result) => {
-            entries = result
-            renderRoles();
-        });
-    });
-    console.log("Hey"+indexUserRoles());
-    renderRoles();
-
+    fetch(`${URL}/userRoles`)
+        .then(resp => resp.json()
+            .then((result) => {
+                userRoles = result
+                renderRoles();
+            }))
+        .then(data => console.log(data))
 };
-
+// .then((result) => {
+//     result.json().
+// });
 const renderRoles = () => {
     const select = document.querySelector('#role');
     userRoles.forEach((role) => {
-        const option = document.createElement();
-        option.appendChild('<option value="'+role.name+'">'+role.name+'</option>');
-        select.appendChild(select);
+        var option = document.createElement('option');
+        option.value = role.id;
+        option.innerText = role.name;
+        select.appendChild(option);
         console.log(select);
     });
 };
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
 
     indexUserRoles();
 });
