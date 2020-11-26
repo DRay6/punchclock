@@ -23,8 +23,9 @@ public class UserService implements UserDetailsService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public UserService(BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserService(BCryptPasswordEncoder bCryptPasswordEncoder, UserRepository userRepository) {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.userRepository = userRepository;
     }
 
     public List<User> findAll() {
@@ -50,10 +51,13 @@ public class UserService implements UserDetailsService {
 
     @EventListener
     private void encrypUserPasswordOnLoad(ApplicationReadyEvent applicationReadyEvent){
-        for (User user: userRepository.findAll()
+        var users = userRepository.findAll();
+        for (User user: users
              ) {
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            userRepository.saveAndFlush(user);
         }
+
     }
 
 }

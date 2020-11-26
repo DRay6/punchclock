@@ -2,8 +2,9 @@ INSERT INTO USER_ROLE (name) VALUES
 ('Admin'),
 ('User');
 INSERT INTO ENTRY_TAG (name) VALUES
-('Einchecken'),
-('Auschecken');
+('HomeOffice'),
+('auswärtiges Arbeiten'),
+('Bagen');
 
 INSERT INTO USER (username, password, user_role_id)  VALUES
 ('Ray','123','1'),

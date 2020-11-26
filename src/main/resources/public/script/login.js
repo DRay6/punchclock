@@ -14,7 +14,9 @@ const login = (e) => {
         body: JSON.stringify(user)
     }).then(resp => {
         console.log(resp)
-
+        if (resp.status === 200){
+            window.location.assign("./entry.html");
+        }
     })
 }
 

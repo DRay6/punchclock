@@ -24,7 +24,6 @@ public class UserController {
     @PostMapping("/sign-up")
     public void signUp(@RequestBody User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-
         userService.createUser(user);
     }
 
@@ -32,6 +31,11 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public List<User> getAllEntries() {
         return userService.findAll();
+    }
+
+    @DeleteMapping("{id}")
+    public void  deleteUser(){
+        
     }
 
 }

@@ -3,6 +3,7 @@ package ch.zli.m223.punchclock.controller;
 import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.repository.EntryRepository;
 import ch.zli.m223.punchclock.service.EntryService;
+import org.springframework.data.annotation.Persistent;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,9 @@ public class EntryController {
 
     //Holt alle Enträge eines Users
     @GetMapping("/by-user{id}")
-    public List<Entry> getEntryByUserid(@PathVariable int id){return entryService.findByUserId(id);}
+    public List<Entry> getEntryByUserid(@PathVariable int id){
+        return entryService.findByUserId(id);
+    }
 
     //erstellt einen Eintrag
     @PostMapping
