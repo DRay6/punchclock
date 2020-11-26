@@ -13,8 +13,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.context.annotation.Bean;
 
-import static ch.zli.m223.punchclock.filter.SecurityConstants.GET_ROLES_URL;
-import static ch.zli.m223.punchclock.filter.SecurityConstants.SIGN_UP_URL;
+import static ch.zli.m223.punchclock.filter.SecurityConstants.*;
 
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
