@@ -55,4 +55,20 @@ public class Entry {
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public EntryTag getEntryTag() {
+        return entryTag;
+    }
+
+    public void setEntryTag(EntryTag entryTag) {
+        this.entryTag = entryTag;
+    }
 }

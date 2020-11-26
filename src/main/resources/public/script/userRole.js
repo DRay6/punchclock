@@ -8,8 +8,8 @@ const indexUserRoles = () => {
             renderRoles();
         });
     });
-    renderRoles();
     console.log("Hey"+indexUserRoles());
+    renderRoles();
 
 };
 

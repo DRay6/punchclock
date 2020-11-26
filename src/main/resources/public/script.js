@@ -6,9 +6,4 @@ const createCell = (text) => {
     return cell;
 };
 
-const createOption = (text) => {
-    const  option = document.createElement('option');
-    option.innerHTML = text;
-    return option;
-}
 

@@ -30,4 +30,12 @@ public class EntryTag {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Set<Entry> getEntrySet() {
+        return entrySet;
+    }
+
+    public void setEntrySet(Set<Entry> entrySet) {
+        this.entrySet = entrySet;
+    }
 }
